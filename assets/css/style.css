@@ -80,6 +80,36 @@ a:hover {
   line-height: 1.67; /* 166.667% */
 }
 
+.control {
+  display: flex;
+  column-gap: 18px;
+}
+
+.control-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: solid 1px #575f66;
+  outline: none;
+  color: #575f66;
+  background: #fff;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+.control-btn:hover {
+  border-color: #2e80ce;
+  background: #2e80ce;
+  color: #fff;
+}
+
+.control-next-icon {
+  rotate: 180deg;
+}
+
 /* Header */
 .header {
   min-height: 100vh;
@@ -469,7 +499,7 @@ a:hover {
 
 /* Members */
 .members {
-  padding-top: 85px;
+  padding: 85px 0;
   background: #fff;
 }
 
@@ -490,10 +520,11 @@ a:hover {
   column-gap: 30px;
 }
 
-.members-item {
+.members-item__link {
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
 }
 
 .members-item__image-bg {
@@ -504,6 +535,7 @@ a:hover {
   border-radius: 6px;
   background: #eaf6ff;
   overflow: hidden;
+  transition: 0.25s;
 }
 
 .member-item__thumb {
@@ -511,10 +543,14 @@ a:hover {
   position: relative;
   right: auto;
   left: auto;
-  min-width: 100%;
+  width: 100%;
   flex-shrink: 0;
   border-radius: 6px;
   object-fit: cover;
+}
+
+.members-item:hover .members-item__image-bg {
+  transform: scale(1.1);
 }
 
 .members__name {
@@ -536,32 +572,174 @@ a:hover {
 
 .members__control {
   margin-top: 38px;
-  display: flex;
-  justify-content: center;
-  column-gap: 18px;
 }
 
-.members__control-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: solid 1px #575f66;
-  outline: none;
-  color: #575f66;
+/* install */
+.install {
+  margin: 180px 0 85px;
   background: #fff;
-  transition: 0.25s;
-  cursor: pointer;
 }
 
-.members__control-btn:hover {
-  border-color: #2e80ce;
+.install-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 70px;
+  border-radius: 4px;
   background: #2e80ce;
+}
+
+.install__img {
+  display: block;
+  margin-top: -95px;
+}
+
+.install-content {
+  max-width: 586px;
+}
+
+.install__heading {
+  max-width: 489px;
   color: #fff;
 }
 
-.members__control-next-icon {
-  rotate: 180deg;
+.install__desc {
+  --line-clamp: 3;
+  color: #fff;
+}
+
+.install__link {
+  display: flex;
+  column-gap: 28px;
+  margin-top: 38px;
+}
+
+/* News */
+.news {
+  padding: 85px 0;
+  background: #fff;
+}
+
+.news-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.news-content {
+  flex-shrink: 0;
+}
+
+.news__heading {
+  max-width: 470px;
+}
+
+.news__read-more {
+  display: inline-block;
+  margin-top: 28px;
+  color: var(--header-bg);
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.55; /* 155.556% */
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-underline-offset: 5px;
+}
+
+.news__control {
+  margin-top: 28px;
+}
+
+.news-list {
+  max-width: 570px;
+  display: flex;
+  column-gap: 30px;
+  justify-content: space-between;
+}
+
+.news-item {
+  flex: 1;
+}
+
+.news-item:hover {
+  box-shadow: 0px 18px 50px 0px rgba(0, 0, 0, 0.05);
+}
+
+.news-item:hover .news-item__thumb {
+  transform: scale(1.02);
+}
+
+.news-item__thumb {
+  display: block;
+  width: 100%;
+  height: 172px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 12px 12px 0px 0px;
+  transition: 0.025s;
+}
+
+.news-item-body {
+  padding: 18px 22px 21px;
+  border-radius: 0 0 12px 12px;
+  border: 1px solid #e8ebee;
+  background: #fff;
+}
+
+.news-item__heading {
+  color: var(--header-bg);
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.62; /* 162.5% */
+}
+
+.news-item__desc {
+  margin-top: 10px;
+  color: #575f66;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.71; /* 171.429% */
+}
+
+.news-item__more {
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--header-bg);
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.news-item__more:hover {
+  color: #2e80ce;
+}
+
+/* Appointment */
+.appointment {
+  margin: 85px 0 170px;
+}
+
+.appointment-inner {
+  padding: 100px 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f6fbff;
+}
+
+.appointment__desc {
+  --line-clamp: 3;
+  width: 617px;
+  text-align: center;
+  font-size: 1.6rem;
+  line-height: 1.75; /* 175% */
+}
+
+.appointment__btn {
+  margin-top: 38px;
 }
